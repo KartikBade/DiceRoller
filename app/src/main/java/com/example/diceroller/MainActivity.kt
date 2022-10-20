@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun DiceRollerMain() {
-    var image by remember { mutableStateOf(R.drawable.ic_launcher_background) }
+    var image by remember { mutableStateOf(R.drawable.dice_1) }
 
     Column(
         modifier = Modifier
@@ -55,11 +55,13 @@ fun DiceRollerMain() {
         )
         Button(
             onClick = {
-                image = when( (1..3).random() ) {
-                    1 -> R.drawable.ic_launcher_foreground
-                    2 -> R.drawable.ic_launcher_background
-                    3 -> R.drawable.ic_launcher_foreground
-                    else -> R.drawable.ic_launcher_background
+                image = when( (1..6).random() ) {
+                    1 -> R.drawable.dice_1
+                    2 -> R.drawable.dice_2
+                    3 -> R.drawable.dice_3
+                    4 -> R.drawable.dice_4
+                    5 -> R.drawable.dice_5
+                    else -> R.drawable.dice_6
                 }
             },
             modifier = Modifier
